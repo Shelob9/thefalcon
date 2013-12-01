@@ -1,0 +1,28 @@
+/*
+ Theme Name:     The Falcon
+ Theme URI:
+ Description:    A centered child theme for Twenty Fourteen.
+ Author:         Josh Pollock
+ Author URI:     http://JoshPress.net
+ Template:       twentyfourteen
+ Version:        0.1
+ License:       GPL v2+
+*/
+
+@import url("../twentyfourteen/style.css");
+
+.site {
+    margin: 0 auto;
+}
+
+#secondary {
+    padding-top: 8px;
+}
+
+#secondary a:hover {
+    color: #fff;
+}
+
+.footer-sidebar .widget input, .footer-sidebar .widget textarea, .primary-sidebar .widget input, .primary-sidebar .widget textarea {
+    background-color: #000;
+}
