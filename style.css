@@ -1,13 +1,22 @@
 /*
  Theme Name:     The Falcon
- Theme URI:
- Description:    A centered child theme for Twenty Fourteen.
+ Theme URI:      http://jpwp.me/thefalcon
+ Description:    A child theme for Twenty Fourteen with all content centered and user-configurable gradient background.
  Author:         Josh Pollock
  Author URI:     http://JoshPress.net
  Template:       twentyfourteen
  Version:        0.1
- License:       GPL v2+
+ License: GPL (Version 2 or later)
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+
+
+
+/**
+The Falcon is copyright 2013 Josh Pollock
+The Falcon is licensed under the terms of the GNU General Public License Version 2 or later.
+
+**/
 
 @import url("../twentyfourteen/style.css");
 
