@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
                 }), {queue:false, duration:600};
                 $('nav#primary-navigation').css('top', '0px');
                 $nav.data('size','small').stop().animate({
-                    height:'50px'
+                    height:'48px'
                 }, 600);
                 $('.header-main').animate({
                     left:200, opacity:"show"}, 600);
@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
                 $('nav#primary-navigation').animate({
                     paddingLeft: '30px',
                 }), {queue:false, duration:600};             $nav.data('size','big').stop().animate({
-                    height:'100px'
+                    height:'88px'
                 }, 600);
 
             }
