@@ -14,15 +14,15 @@ jQuery(document).ready(function($) {
                     display: 'inline',
                     top: '0px',
                 });
-                $('#header-main').fadeOut("fast");
+                $('.header-main').fadeOut("fast");
                 $('nav#primary-navigation').animate({
-                    paddingLeft: '25%',
+                    paddingLeft: $( 'h1.site-title' ).width() + 45 + 'px',
                 }), {queue:false, duration:600};
                 $('nav#primary-navigation').css('top', '0px');
                 $nav.data('size','small').stop().animate({
                     height:'50px'
                 }, 600);
-                $('#header-main').animate({
+                $('.header-main').animate({
                     left:200, opacity:"show"}, 600);
             };
         }
@@ -34,7 +34,7 @@ jQuery(document).ready(function($) {
                     top: '40px',
                 }), {queue:false, duration:600}; ;
                 $('nav#primary-navigation').animate({
-                    paddingLeft: '0px',
+                    paddingLeft: '30px',
                 }), {queue:false, duration:600};             $nav.data('size','big').stop().animate({
                     height:'100px'
                 }, 600);

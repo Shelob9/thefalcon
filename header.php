@@ -46,14 +46,15 @@
                 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
             </div>
             <div id="top-bar-widgets">
-                TOPBAR WIDGETS I AM!
+               <p> TOPBAR WIDGETS I AM!</p>
             </div>
         </div>
 
         <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
             <h1 class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></h1>
             <a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
-            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'container_class' => 'topbar-menu', ) ); ?>
+            <!--
             <div class="search-toggle">
                 <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
             </div>
@@ -62,6 +63,7 @@
                     <?php get_search_form(); ?>
                 </div>
             </div>
+            -->
         </nav>
 
 	</header><!-- #masthead -->
