@@ -10,12 +10,12 @@
   left:0;
 }
 
-
 .header-main {
   width: 25%;
   float: left;
   display: inline;
 }
+
 #top-bar-widgets {
   width: 75%;
   display:inline;
@@ -24,6 +24,7 @@
     float:right;
   }
 }
+
 nav#primary-navigation  {
   width: 100%;
   display:block;
@@ -44,6 +45,6 @@ nav#primary-navigation  {
   }*/
 }
 
-.topbar-menu {
-  display:inline;
+.topbar-menu, .search-toggle {
+  display:inline-block;
 }

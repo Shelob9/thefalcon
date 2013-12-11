@@ -11,4 +11,4 @@ nav#primary-navigation { width: 100%; display: block; top: 40px; left: 0px; posi
 ul { li { display:inline; padding: 0px 15px 0 15px; } li:first-child { padding-left: 0px; }
 }*/ }
 
-.topbar-menu { display: inline; }
+.topbar-menu, .search-toggle { display: inline-block; }
