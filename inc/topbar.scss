@@ -48,3 +48,14 @@ nav#primary-navigation  {
 .topbar-menu, .search-toggle {
   display:inline-block;
 }
+
+@media screen and (min-width: 673px) {
+  //pull search toggle to left side on menu collapse
+  .search-toggle {
+    left: 0px;
+    position: absolute;
+    float: none;
+    top: 12px;
+  }
+
+}

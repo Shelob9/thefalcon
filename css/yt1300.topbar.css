@@ -12,3 +12,5 @@ ul { li { display:inline; padding: 0px 15px 0 15px; } li:first-child { padding-l
 }*/ }
 
 .topbar-menu, .search-toggle { display: inline-block; }
+
+@media screen and (min-width: 673px) { .search-toggle { left: 0px; position: absolute; float: none; top: 12px; } }
