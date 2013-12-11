@@ -71,4 +71,13 @@ function yt1300_falcon_style() {
 }
 add_action( 'wp_head', 'yt1300_falcon_style' );
 
+    /**
+     * Include functions for fancier topbar
+     *
+     * @package yt1300
+     * @since 0.1
+     * @author Josh Pollock
+     */
+    include( 'inc/topbar.php' );
+
 ?>
