@@ -1,18 +1,18 @@
 #big-top { display: block; }
 
-#masthead { width: 100%; height: 88px; position: fixed; top: 0; left: 0; }
+#masthead { width: 100%; max-width: 100%; height: 88px; position: fixed; top: 0; left: 0; }
 
 .header-main { width: 25%; float: left; display: inline; }
 
 #top-bar-widgets { width: 75%; display: inline; color: white; }
 #top-bar-widgets p { float: right; }
 
-nav#primary-navigation { width: 100%; display: block; top: 40px; left: 0px; position: absolute; background: transparent; padding-left: 30px; /*
+nav#primary-navigation { width: 100%; display: block; top: 40px; left: 0px; position: absolute; padding-left: 30px; /*
 ul { li { display:inline; padding: 0px 15px 0 15px; } li:first-child { padding-left: 0px; }
 }*/ }
 
-.topbar-menu, .search-toggle { display: inline-block; }
-
-@media screen and (max-width: 673px) { .search-toggle { left: 0px; position: absolute; float: none; top: 12px; }
-  .topbar-menu { display: block; }
-  nav#primary-navigation { background-color: black; } }
+@media screen and (min-width: 673px) { .topbar-menu, .search-toggle { display: inline-block; }
+  nav#primary-navigation { background: transparent; } }
+@media screen and (max-width: 673px) { .search-toggle { left: 0px; position: absolute; float: none; top: 0px; }
+  .topbar-menu { display: block; background-color: black; }
+  .primary-navigation.toggled-on { display: block; padding: 48px 0 0 0px; } }

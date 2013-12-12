@@ -1,6 +1,5 @@
 
 jQuery(document).ready(function($) {
-
     $(function(){
         $('#masthead').data('size','big');
     });
@@ -35,12 +34,22 @@ jQuery(document).ready(function($) {
                 }), {queue:false, duration:600}; ;
                 $('nav#primary-navigation').animate({
                     paddingLeft: '30px',
-                }), {queue:false, duration:600};             $nav.data('size','big').stop().animate({
+                }), {queue:false, duration:600};
+                $nav.data('size','big').stop().animate({
                     height:'88px'
                 }, 600);
-
             }
         }
     });
+
+    $( '.menu-toggle' ).on( 'click.twentyfourteen', function() {
+        if ( $('#primary-navigation').hasClass('toggled-on') ) {
+            $('#primary-navigation').css({
+                paddingTop: '48px',
+                paddingLeft: '0px',
+            });
+        }
+    } );
+
 
 }); //end jQuery noConflict wrapper
