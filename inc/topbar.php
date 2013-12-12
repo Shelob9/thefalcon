@@ -63,7 +63,7 @@ class topbar {
     * @since 0.1
     * @author Josh Pollock
     */
-    function social() {
+    static function social() {
         //get all theme mods at once in $mods
         $mods = get_theme_mods('yt1300');
         //build output

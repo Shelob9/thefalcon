@@ -9,6 +9,9 @@ class mobile_sidebar {
         add_action( 'wp_enqueue_scripts', array($this, 'pageslide' ) );
         add_action( 'wp_footer', array($this, 'make_it_so') );
         add_action( 'widgets_init', array($this, 'mobile_widget_area'));
+        if ( wp_is_mobile() ) {
+            add_action( 'wp_head', array( $this, 'small_fix') );
+        }
     }
     /**
      * Enqueue sidr CSS/JS
@@ -82,6 +85,21 @@ class mobile_sidebar {
             </div>
         </header><!-- #masthead -->
     <?php
+    }
+
+    /**
+     * Mobile css fixes
+     *
+     * @package yt1300
+     * @since 0.3
+     * @author Josh Pollock
+     */
+    function small_fix() {
+        echo '
+        <style>
+                #top-social .genericon{float:left;}
+        </style>
+    ';
     }
 }
 
