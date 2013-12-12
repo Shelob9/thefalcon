@@ -1,7 +1,7 @@
 The Falcon
 ==========
 
-The Falcon is a child theme for Twenty Fourteen with all content centered and user-configurable gradient background via the WordPress customizer.
+A child theme for Twenty Fourteen with all content centered, user-configurable gradient background, fancier topbar and a slideout sidebar on mobile.
 
 More Information
 ================
