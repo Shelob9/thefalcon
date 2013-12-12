@@ -39,6 +39,7 @@ if ( ! wp_is_mobile() ) : ?>
             <?php endif; ?>
 
         <?php if ( has_nav_menu( 'secondary' ) ) : ?>
+            <h5><?php _e( 'Menu', 'yt1300' ); ?></h5>
             <nav role="navigation" class="navigation site-navigation secondary-navigation">
                 <?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
             </nav>
