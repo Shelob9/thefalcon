@@ -44,11 +44,12 @@ jQuery(document).ready(function($) {
 
     $( '.menu-toggle' ).on( 'click.twentyfourteen', function() {
         if ( $('#primary-navigation').hasClass('toggled-on') ) {
-            $('#primary-navigation').css({
-                paddingTop: '48px',
-                paddingLeft: '0px',
-            });
+            $('#primary-navigation').addClass('nav-toggled');
         }
+        else {
+            $('#primary-navigation').removeClass('nav-toggled');
+        }
+
     } );
 
 

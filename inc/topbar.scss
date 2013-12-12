@@ -44,7 +44,7 @@ nav#primary-navigation  {
     }
   }*/
 }
-@media screen and (min-width: 673px) {
+@media screen and (min-width: 768px) {
   .topbar-menu, .search-toggle {
     display:inline-block;
   }
@@ -53,7 +53,7 @@ nav#primary-navigation  {
   }
 }
 
-@media screen and (max-width: 673px) {
+@media screen and (max-width: 768px) {
   //pull search toggle to left side on menu collapse
   .search-toggle {
     left: 0px;
@@ -70,4 +70,8 @@ nav#primary-navigation  {
       padding: 48px 0 0 0px;
   }
 
+}
+
+.nav-toggled {
+  padding-top:48px !important;
 }
