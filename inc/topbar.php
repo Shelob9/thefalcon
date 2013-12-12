@@ -5,7 +5,6 @@ class topbar {
 
     function __construct() {
         add_action( 'wp_enqueue_scripts', array( $this, 'script_style') );
-        add_action( 'widgets_init', array($this, 'top_widget') );
     }
 
     function script_style() {
@@ -32,8 +31,8 @@ class topbar {
                 <div class="header-main">
                     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                 </div>
-                <div id="top-bar-widgets">
-                    <p> TOPBAR WIDGETS I AM!</p>
+                <div id="top-social">
+                   <?php echo self::social(); ?>
                 </div>
             </div>
 
@@ -53,6 +52,37 @@ class topbar {
         </header><!-- #masthead -->
     <?php
     }
+
+    function social() {
+        //get all theme mods at once in $mods
+        $mods = get_theme_mods('yt1300');
+        //build output
+        $out = '<div class="social">';
+        if ( $mods['twitter'] != '' ) {
+            $out .= '<span class="genericon genericon-twitter"><a href="';
+            $out .= esc_url( $mods['twitter']);
+            $out .='"></a></span>';
+        }
+        if ( $mods['googleplus'] !='' ) {
+            $out .= '<span class="genericon genericon-googleplus"><a href="';
+            $out .= esc_url( $mods['googleplus']);
+            $out .='"></a></span>';
+        }
+        if ( $mods['linkedin'] !='' ) {
+            $out .= '<span class="genericon genericon-linkedin"><a href="';
+            $out .= esc_url( $mods['linkedin']);
+            $out .='"></a></span>';
+        }
+        if ( $mods['facebook'] !='' ) {
+            $out .= '<span class="genericon genericon-facebook"><a href="';
+            $out .= esc_url( $mods['facebook']);
+            $out .='"></a></span>';
+        }
+        $out .= '</div';
+        //return social
+        return $out;
+    }
+
 }
 
 new topbar();
