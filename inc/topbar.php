@@ -25,7 +25,7 @@ class topbar {
 
     }
 
-    static function header_main() { ?>
+    static function header() { ?>
         <header id="masthead" class="site-header" role="banner">
             <div id="big-top">
                 <div class="header-main">
@@ -84,9 +84,3 @@ class topbar {
 }
 
 new topbar();
-
-    function yt1300_header() {
-        if ( !wp_is_mobile() ) {
-            return topbar::header_main();
-        }
-    }

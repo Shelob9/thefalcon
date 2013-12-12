@@ -122,4 +122,13 @@ include( 'inc/topbar.php' );
  */
  include_once('inc/mobile_sidebar.php');
 
+    function yt1300_header() {
+        if ( !wp_is_mobile() ) {
+            return topbar::header();
+        }
+        else {
+            return \yt1300\mobile_sidebar::header();
+        }
+    }
+
 ?>
