@@ -41,35 +41,13 @@ nav#primary-navigation  {
   padding-left:30px;
 }
 
-@media screen and (min-width: 768px) {
-  .topbar-menu, .search-toggle {
-    display:inline-block;
-
+.second {
+  float:right;
+  margin: 0 .5em;
+  display:inline;
+  .genericon {
+    font-size: 48px;
   }
-  nav#primary-navigation {
-    background: transparent;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  //pull search toggle to left side on menu collapse
-  .search-toggle {
-    position: absolute;
-    top: 0px;
-  }
-  .topbar-menu {
-    display:block;
-    background-color: black;
-  }
-  .primary-navigation.toggled-on{
-      display:block;
-      padding: 48px 0 0 0px;
-  }
-  .nav-toggled {
-    padding-top:48px !important;
-    padding-left:0px !important;
-  }
-
 }
 
 

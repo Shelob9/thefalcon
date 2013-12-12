@@ -35,25 +35,9 @@ nav#primary-navigation {
   position: absolute;
   padding-left: 30px; }
 
-@media screen and (min-width: 768px) {
-  .topbar-menu, .search-toggle {
-    display: inline-block; }
-
-  nav#primary-navigation {
-    background: transparent; } }
-@media screen and (max-width: 768px) {
-  .search-toggle {
-    position: absolute;
-    top: 0px; }
-
-  .topbar-menu {
-    display: block;
-    background-color: black; }
-
-  .primary-navigation.toggled-on {
-    display: block;
-    padding: 48px 0 0 0px; }
-
-  .nav-toggled {
-    padding-top: 48px !important;
-    padding-left: 0px !important; } }
+.second {
+  float: right;
+  margin: 0 .5em;
+  display: inline; }
+  .second .genericon {
+    font-size: 48px; }

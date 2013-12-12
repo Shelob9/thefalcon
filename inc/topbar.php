@@ -6,6 +6,9 @@ class topbar {
 
     function __construct() {
         add_action( 'wp_enqueue_scripts', array( $this, 'script_style') );
+        if ( !wp_is_mobile() ) {
+            add_action( 'wp_head', array( $this, 'small_fix') );
+        }
     }
 
     /**
@@ -37,6 +40,7 @@ class topbar {
             </div>
 
             <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+                <h1 class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></h1>
                 <a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
                 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'container_class' => 'topbar-menu', ) ); ?>
                 <div class="search-toggle">
@@ -87,6 +91,38 @@ class topbar {
         $out .= '</div>';
         //return social
         return $out;
+    }
+
+    /**
+     * Some topbar fixes in case screen is condensed not on mobile
+     *
+     */
+    function small_fix() {
+        echo '
+        <style>
+                @media screen and (min-width: 768px) {
+                .topbar-menu, .search-toggle {
+                display: inline-block; }
+                nav#primary-navigation {
+                background: transparent; } }
+                @media screen and (max-width: 768px) {
+                .search-toggle {
+                position: absolute;
+                top: 0px; }
+                #masthead {
+                margin-top:46px;
+                }
+                .topbar-menu {
+                display: block;
+                background-color: black; }
+                .primary-navigation.toggled-on {
+                display: block;
+                padding: 48px 0 0 0px; }
+                .nav-toggled {
+                padding-top: 48px !important;
+                padding-left: 0px !important; } }
+        </style>
+    ';
     }
 
 }
