@@ -23,8 +23,8 @@ class slidebar {
      * @author Josh Pollock
      */
     function sidr() {
-        wp_enqueue_script( 'pagelslide', get_stylesheet_directory_uri().'/js/jquery.sidr.min.js', array('jquery'), null, true );
-        wp_enqueue_style( 'sidr', get_stylesheet_directory_uri().'/css/jquery.sidr.dark.css');
+        wp_enqueue_script( 'pagelslide', get_stylesheet_directory_uri().'/js/jquery.pageslide.min.js', array('jquery'), null, true );
+        wp_enqueue_style( 'pageslide', get_stylesheet_directory_uri().'/css/jquery.pageslide.css');
     }
 
     /**
@@ -35,16 +35,12 @@ class slidebar {
      * @author Josh Pollock
      */
     function make_it_so() {
-        echo "
+        echo '
             <script>
                 jQuery(document).ready(function($) {
-                   $('#sidr-toggle').sidr({
-                      name:     'secondary',
-                      source:   '#seconday',
-                      side:     'right',
-                   });
+                    $(".second").pageslide({ direction: "left", modal: true });
                 });
-            </script>";
+            </script>';
 
     }
 }
