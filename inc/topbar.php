@@ -38,7 +38,6 @@ class topbar {
             </div>
 
             <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-                <h1 class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></h1>
                 <a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
                 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'container_class' => 'topbar-menu', ) ); ?>
                 <div class="search-toggle">

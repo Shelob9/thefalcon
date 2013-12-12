@@ -41,16 +41,15 @@ jQuery(document).ready(function($) {
             }
         }
     });
+    var adminbarHeight = $( '#wpadminbar' ).height();
+    var mastHeight = $( '#masthead' ).height();
+    $( '#masthead').css({
+        marginTop:  adminbarHeight + 'px',
+    })
+    $( '#main').css({
+        marginTop: mastHeight + 'px',
+    })
 
-    $( '.menu-toggle' ).on( 'click.twentyfourteen', function() {
-        if ( $('#primary-navigation').hasClass('toggled-on') ) {
-            $('#primary-navigation').addClass('nav-toggled');
-        }
-        else {
-            $('#primary-navigation').removeClass('nav-toggled');
-        }
-
-    } );
 
 
 }); //end jQuery noConflict wrapper

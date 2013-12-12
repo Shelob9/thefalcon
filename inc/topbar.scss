@@ -33,17 +33,8 @@ nav#primary-navigation  {
   left: 0px;
   position: absolute;
   padding-left:30px;
-  /*
-  ul {
-    li {
-      display:inline;
-      padding: 0px 15px 0 15px;
-    }
-    li:first-child {
-      padding-left: 0px;
-    }
-  }*/
 }
+
 @media screen and (min-width: 768px) {
   .topbar-menu, .search-toggle {
     display:inline-block;
