@@ -35,3 +35,9 @@ The Falcon is licensed under the terms of the GNU General Public License Version
 .footer-sidebar .widget input, .footer-sidebar .widget textarea, .primary-sidebar .widget input, .primary-sidebar .widget textarea {
     background-color: #000;
 }
+
+.slidebar-close {
+    position: fixed;
+    right: 20px;
+    top: 16px;
+}
