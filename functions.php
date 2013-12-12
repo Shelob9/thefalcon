@@ -9,20 +9,24 @@
  */
     
 /**
- * Add controls/ settings for background colors
+ * Add controls/ settings for background colors ans social links
  *
  * @package yt1300
  * @since 0.1
  * @author Josh Pollock
  */
- function yt1300_bg_colors() {
+ function yt1300_customizer() {
      global $wp_customize;
-     //add section
+     //add sections
      $wp_customize->add_section( 'yt1300_gradient_bg', array(
          'title'          => __('Gradient Background Colors', 'yt1300'),
          'priority'       => 35,
      ) );
-     //start color
+     //star
+     $wp_customize->add_section( 'yt1300_social', array(
+         'title'          => __('Social Links For Header', 'yt1300'),
+         'priority'       => 45,
+     ) );
      $wp_customize->add_setting( 'gradient_start', array(
          'default'        => '#000',
      ) );
@@ -41,8 +45,37 @@
          'section' => 'yt1300_gradient_bg',
          'settings'   => 'gradient_end',
      ) ) );
+     //Create Text fields for social with a loop
+     $socials = array(
+         array(
+             'label'     => 'Facebook Profile or Page',
+             'name'      => 'facebook',
+         ),
+         array(
+             'label'     => 'Twitter Profile',
+             'name'      => 'twitter',
+         ),
+         array(
+             'label'     => 'Google Plus Profile',
+             'name'      => 'googleplus',
+         ),
+         array(
+             'label'     => 'LinkedIn Profile',
+             'name'      => 'linkedin',
+         ),
+     );
+     foreach ( $socials as $social ) {
+         $wp_customize->add_setting( $social['name'], array(
+         ) );
+         $wp_customize->add_control( $social['name'], array(
+             'label'   => __($social['label'], 'yt1300'),
+             'section' => 'yt1300_social',
+             'settings'   => $social['name'],
+         ) );
+
+     }
  }
-add_action( 'customize_register', 'yt1300_bg_colors' );
+add_action( 'customize_register', 'yt1300_customizer' );
 
 /**
  * Add gradient background with colors set in bg_colors() as inline style in heades
