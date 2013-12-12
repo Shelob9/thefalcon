@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: josh
- * Date: 12/10/13
- * Time: 12:52 AM
- */
 
 namespace yt1300;
 
@@ -64,6 +58,13 @@ class mobile_sidebar {
             ) );
     }
 
+    /**
+     *  The mobile header
+     *
+     * @package yt1300
+     * @since 0.2
+     * @author Josh Pollock
+     */
     static function header() { ?>
         <header id="masthead" class="site-header" role="banner">
             <a href="#modal" class="second"><span class="genericon genericon-menu"></span></a>

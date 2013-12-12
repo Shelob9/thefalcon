@@ -1,5 +1,6 @@
 <?php
 
+    namespace yt1300;
 
 class topbar {
 
@@ -7,24 +8,25 @@ class topbar {
         add_action( 'wp_enqueue_scripts', array( $this, 'script_style') );
     }
 
+    /**
+     * Scripts and styles for the non-mobile topbar.
+     *
+     * @package yt1300
+     * @since 0.1
+     * @author Josh Pollock
+     */
     function script_style() {
         wp_enqueue_script( 'yt1300-topbar', get_stylesheet_directory_uri().'/js/yt1300.topbar.min.js', array('jquery'), false, true );
         wp_enqueue_style( 'yt300-topbar', get_stylesheet_directory_uri().'/css/yt1300.topbar.css' );
     }
 
-    function top_widget() {
-        register_sidebar( array(
-            'name'          => __( 'Topbar', 'yt1300' ),
-            'id'            => 'sidebar-tb',
-            'description'   => __( 'A small sidebar area in the topbar, great for social profile links.', 'yt1300' ),
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</aside>',
-            'before_title'  => '<h1 class="widget-title">',
-            'after_title'   => '</h1>',
-        ) );
-
-    }
-
+    /**
+     * The non-mobile topbar
+     *
+     * @package yt1300
+     * @since 0.1
+     * @author Josh Pollock
+     */
     static function header() { ?>
         <header id="masthead" class="site-header" role="banner">
             <div id="big-top">
@@ -51,6 +53,12 @@ class topbar {
     <?php
     }
 
+    /*
+    * Social Icons for topbar
+    * @package yt1300
+    * @since 0.1
+    * @author Josh Pollock
+    */
     function social() {
         //get all theme mods at once in $mods
         $mods = get_theme_mods('yt1300');
