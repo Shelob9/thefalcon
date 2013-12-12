@@ -1,5 +1,6 @@
 #big-top {
-  display: block; }
+  display: block;
+}
 
 #masthead {
   width: 100%;
@@ -7,19 +8,24 @@
   height: 88px;
   position: fixed;
   top: 0;
-  left: 0; }
+  left: 0;
+}
 
 .header-main {
   width: 25%;
   float: left;
-  display: inline; }
+  display: inline;
+}
 
-#top-bar-widgets {
+#top-social {
   width: 75%;
   display: inline;
-  color: white; }
-  #top-bar-widgets p {
-    float: right; }
+  float: right;
+}
+#top-social .genericon {
+  float: right;
+  font-size: 32px;
+}
 
 nav#primary-navigation {
   width: 100%;
@@ -27,27 +33,36 @@ nav#primary-navigation {
   top: 40px;
   left: 0px;
   position: absolute;
-  padding-left: 30px; }
+  padding-left: 30px;
+}
 
 @media screen and (min-width: 768px) {
   .topbar-menu, .search-toggle {
-    display: inline-block; }
+    display: inline-block;
+  }
 
   nav#primary-navigation {
-    background: transparent; } }
+    background: transparent;
+  }
+}
 @media screen and (max-width: 768px) {
   .search-toggle {
     position: absolute;
-    top: 0px; }
+    top: 0px;
+  }
 
   .topbar-menu {
     display: block;
-    background-color: black; }
+    background-color: black;
+  }
 
   .primary-navigation.toggled-on {
     display: block;
-    padding: 48px 0 0 0px; }
+    padding: 48px 0 0 0px;
+  }
 
   .nav-toggled {
     padding-top: 48px !important;
-    padding-left: 0px !important; } }
+    padding-left: 0px !important;
+  }
+}

@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
         var $nav = $('#masthead');
         if ($('body').scrollTop() > 0) {
             if ($nav.data('size') == 'big') {
-                $('#top-bar-widgets').css('display', 'none');
+                $('#top-social').css('display', 'none');
                 $('nav#primary-navigation').css({
                     display: 'inline',
                     top: '0px',
@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
         }
         else {
             if ($nav.data('size') == 'small') {
-                $('#top-bar-widgets').css('display', 'inline');
+                $('#top-social').css('display', 'inline');
                 $('nav#primary-navigation').animate({
                     display: 'block',
                     top: '40px',

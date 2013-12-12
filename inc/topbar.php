@@ -31,9 +31,7 @@ class topbar {
                 <div class="header-main">
                     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                 </div>
-                <div id="top-social">
                    <?php echo self::social(); ?>
-                </div>
             </div>
 
             <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
@@ -57,28 +55,28 @@ class topbar {
         //get all theme mods at once in $mods
         $mods = get_theme_mods('yt1300');
         //build output
-        $out = '<div class="social">';
+        $out = '<div id="top-social">';
         if ( $mods['twitter'] != '' ) {
-            $out .= '<span class="genericon genericon-twitter"><a href="';
+            $out .= '<a href="';
             $out .= esc_url( $mods['twitter']);
-            $out .='"></a></span>';
+            $out .='"><span class="genericon genericon-twitter"></span></a>';
         }
         if ( $mods['googleplus'] !='' ) {
-            $out .= '<span class="genericon genericon-googleplus"><a href="';
+            $out .= '<a href="';
             $out .= esc_url( $mods['googleplus']);
-            $out .='"></a></span>';
+            $out .='"><span class="genericon genericon-googleplus"></span></a>';
         }
         if ( $mods['linkedin'] !='' ) {
-            $out .= '<span class="genericon genericon-linkedin"><a href="';
+            $out .= '<a href="';
             $out .= esc_url( $mods['linkedin']);
-            $out .='"></a></span>';
+            $out .='"><span class="genericon genericon-linkedin"</span></a>';
         }
         if ( $mods['facebook'] !='' ) {
-            $out .= '<span class="genericon genericon-facebook"><a href="';
+            $out .= '<a href="';
             $out .= esc_url( $mods['facebook']);
-            $out .='"></a></span>';
+            $out .='"><span class="genericon genericon-facebook"></span></a>';
         }
-        $out .= '</div';
+        $out .= '</div>';
         //return social
         return $out;
     }

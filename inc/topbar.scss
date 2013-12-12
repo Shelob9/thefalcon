@@ -17,12 +17,18 @@
   display: inline;
 }
 
-#top-bar-widgets {
+#top-social {
   width: 75%;
   display:inline;
-  color: white;
-  p {
+  padding-right: 1em;
+  .genericon {
     float:right;
+    font-size: 1.5em;
+    &:first-child {
+      margin-right: 1em;
+    }
+    color:#24890d;
+    &:hover{ color:white; }
   }
 }
 
@@ -65,5 +71,6 @@ nav#primary-navigation  {
   }
 
 }
+
 
 
