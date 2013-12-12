@@ -41,7 +41,7 @@
 	<?php endif; ?>
 
 	<header id="masthead" class="site-header" role="banner">
-        <a href="#modal" class="second">Link text</a>
+        <a href="#modal" class="second"><span class="genericon genericon-menu"></span></a>
 		<div class="header-main">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
