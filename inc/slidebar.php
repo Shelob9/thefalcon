@@ -14,6 +14,7 @@ class slidebar {
     function __construct() {
         add_action( 'wp_enqueue_scripts', array($this, 'sidr' ) );
         add_action( 'wp_footer', array($this, 'make_it_so') );
+        add_action( 'widgets_init', array($this, 'mobile_widget_area'));
     }
     /**
      * Enqueue sidr CSS/JS
@@ -42,6 +43,25 @@ class slidebar {
                 });
             </script>';
 
+    }
+
+    /**
+     * Register a mobile sidebar
+     *
+     * @package yt1300
+     * @since 0.2
+     * @author Josh Pollock
+     */
+    function mobile_widget_area()  {
+        register_sidebar( array(
+            'name'          => __( 'Mobile Sidebar', 'yt1300' ),
+            'id'            => 'sidebar-mobile',
+            'description'   => __( 'Slideout sidebar for mobile devices.', 'yt1300' ),
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</aside>',
+            'before_title'  => '<h1 class="widget-title">',
+            'after_title'   => '</h1>',
+            ) );
     }
 }
 
