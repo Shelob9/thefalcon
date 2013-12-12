@@ -6,13 +6,13 @@
  * Time: 12:52 AM
  */
 
-namespace yt1300_slidebar;
+namespace yt1300;
 
 
-class slidebar {
+class mobile_sidebar {
 
     function __construct() {
-        add_action( 'wp_enqueue_scripts', array($this, 'sidr' ) );
+        add_action( 'wp_enqueue_scripts', array($this, 'pageslide' ) );
         add_action( 'wp_footer', array($this, 'make_it_so') );
         add_action( 'widgets_init', array($this, 'mobile_widget_area'));
     }
@@ -23,7 +23,7 @@ class slidebar {
      * @since 0.2
      * @author Josh Pollock
      */
-    function sidr() {
+    function pageslide() {
         wp_enqueue_script( 'pagelslide', get_stylesheet_directory_uri().'/js/jquery.pageslide.min.js', array('jquery'), null, true );
         wp_enqueue_style( 'pageslide', get_stylesheet_directory_uri().'/css/jquery.pageslide.css');
     }
@@ -65,4 +65,4 @@ class slidebar {
     }
 }
 
-new slidebar();
+new mobile_sidebar();

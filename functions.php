@@ -78,6 +78,6 @@ add_action( 'wp_head', 'yt1300_falcon_style' );
  * @since 0.2
  * @author Josh Pollock
  */
- include_once( 'inc/slidebar.php');
+ include_once('inc/mobile_sidebar.php');
 
 ?>
