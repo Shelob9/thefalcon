@@ -13,7 +13,7 @@ ul { li { display:inline; padding: 0px 15px 0 15px; } li:first-child { padding-l
 
 @media screen and (min-width: 768px) { .topbar-menu, .search-toggle { display: inline-block; }
   nav#primary-navigation { background: transparent; } }
-@media screen and (max-width: 768px) { .search-toggle { left: 0px; position: absolute; float: none; top: 0px; }
+@media screen and (max-width: 768px) { .search-toggle { position: absolute; top: 0px; }
   .topbar-menu { display: block; background-color: black; }
-  .primary-navigation.toggled-on { display: block; padding: 48px 0 0 0px; } }
-.nav-toggled { padding-top: 48px !important; }
+  .primary-navigation.toggled-on { display: block; padding: 48px 0 0 0px; }
+  .nav-toggled { padding-top: 48px !important; padding-left: 0px !important; } }
