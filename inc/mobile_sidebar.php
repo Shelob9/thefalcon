@@ -54,7 +54,7 @@ class mobile_sidebar {
             'name'          => __( 'Mobile Sidebar', 'yt1300' ),
             'id'            => 'sidebar-mobile',
             'description'   => __( 'Slideout sidebar for mobile devices.', 'yt1300' ),
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s mobile-widget">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h1 class="widget-title">',
             'after_title'   => '</h1>',
@@ -70,7 +70,6 @@ class mobile_sidebar {
      */
     static function header() { ?>
         <header id="masthead" class="site-header" role="banner">
-
             <div class="header-main">
                 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
             </div>
