@@ -1,11 +1,14 @@
 
 jQuery(document).ready(function($) {
+    //function for changing sizes
     $(function(){
         $('#masthead').data('size','big');
     });
 
     $(window).scroll(function(){
+        //set container of the nav element
         var $nav = $('#masthead');
+        //when scrolled away from top
         if ($('body').scrollTop() > 0) {
             if ($nav.data('size') == 'big') {
                 $('#top-social').css('display', 'none');
@@ -25,6 +28,7 @@ jQuery(document).ready(function($) {
                     left:200, opacity:"show"}, 600);
             };
         }
+        //when scrolled back
         else {
             if ($nav.data('size') == 'small') {
                 $('#top-social').css('display', 'inline');
@@ -41,6 +45,7 @@ jQuery(document).ready(function($) {
             }
         }
     });
+    //fix the margins for #main content
     var adminbarHeight = $( '#wpadminbar' ).height();
     var mastHeight = $( '#masthead' ).height();
     $( '#masthead').css({
@@ -49,7 +54,4 @@ jQuery(document).ready(function($) {
     $( '#main').css({
         marginTop: mastHeight + 'px',
     })
-
-
-
 }); //end jQuery noConflict wrapper
