@@ -66,28 +66,22 @@ class topbar {
     static function social() {
         //get all theme mods at once in $mods
         $mods = get_theme_mods('yt1300');
+        //create array to loop through when we create our output
+        $profiles = array( 'twitter', 'googleplus', 'linkedin', 'facebook' );
         //build output
+        //start by wrapping in #top-social
         $out = '<div id="top-social">';
-        if ( $mods['twitter'] != '' ) {
-            $out .= '<a href="';
-            $out .= esc_url( $mods['twitter']);
-            $out .='"><span class="genericon genericon-twitter"></span></a>';
+        //before looping make sure $mods is vaild
+        //loop for each social network
+        foreach ( $profiles as $profile ) {
+            if ( $mods[$profile] != '' ) {
+                $out .= '<a href="';
+                $out .= esc_url( $mods[$profile] );
+                $out .='"><span class="genericon genericon-'.$profile.'"></span></a>';
+            }
+
         }
-        if ( $mods['googleplus'] !='' ) {
-            $out .= '<a href="';
-            $out .= esc_url( $mods['googleplus']);
-            $out .='"><span class="genericon genericon-googleplus"></span></a>';
-        }
-        if ( $mods['linkedin'] !='' ) {
-            $out .= '<a href="';
-            $out .= esc_url( $mods['linkedin']);
-            $out .='"><span class="genericon genericon-linkedin"</span></a>';
-        }
-        if ( $mods['facebook'] !='' ) {
-            $out .= '<a href="';
-            $out .= esc_url( $mods['facebook']);
-            $out .='"><span class="genericon genericon-facebook"></span></a>';
-        }
+        //close the wrap
         $out .= '</div>';
         //return social
         return $out;
