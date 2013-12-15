@@ -1,0 +1,12 @@
+#big-top { display: block; }
+
+#masthead { width: 100%; max-width: 100%; height: 88px; position: fixed; top: 0; left: 0; }
+
+.header-main { width: 70%; float: left; display: inline; }
+
+#top-social { width: 30%; display: inline; padding-right: 1em; }
+#top-social .genericon { float: right; font-size: 1.5em; color: #24890d; }
+#top-social .genericon:first-child { margin-right: 1em; }
+#top-social .genericon:hover { color: white; }
+
+nav#primary-navigation { width: 100%; display: block; top: 40px; left: 0px; position: absolute; padding-left: 30px; }
