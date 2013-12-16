@@ -5,7 +5,7 @@
  Author:         Josh Pollock
  Author URI:     http://JoshPress.net
  Template:       twentyfourteen
- Version:        0.4
+ Version:        0.5
  License:       GPL (Version 2 or later)
  License URI:   http://www.gnu.org/licenses/gpl-2.0.html
  Tags:          black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -17,7 +17,7 @@
 The Falcon is copyright 2013 Josh Pollock
 The Falcon is licensed under the terms of the GNU General Public License Version 2 or later.
 
-Includes jQuery Pageslide © 2012 Robbin & Co. Distributed under the MIT and GPL licenses.
+Includes jQuery Pageslide copyright 2012 Robbin & Co. Distributed under the MIT and GPL licenses.
 **/
 
 @import url("../twentyfourteen/style.css");
