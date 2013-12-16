@@ -66,25 +66,31 @@ class topbar {
     static function social() {
         //get all theme mods at once in $mods
         $mods = get_theme_mods('yt1300');
-        //create array to loop through when we create our output
-        $profiles = array( 'twitter', 'googleplus', 'linkedin', 'facebook' );
-        //build output
-        //start by wrapping in #top-social
-        $out = '<div id="top-social">';
-        //before looping make sure $mods is vaild
-        //loop for each social network
-        foreach ( $profiles as $profile ) {
-            if ( $mods[$profile] != '' ) {
-                $out .= '<a href="';
-                $out .= esc_url( $mods[$profile] );
-                $out .='"><span class="genericon genericon-'.$profile.'"></span></a>';
-            }
+        //check that mods are set, if not, abandon ship.
+        if ( $mods != false ) {
+            //create array to loop through when we create our output
+            $profiles = array('twitter', 'googleplus', 'linkedin', 'facebook');
+            //build output
+            //start by wrapping in #top-social
+            $out = '<div id="top-social">';
+            //before looping make sure $mods is vaild
+            //loop for each social network
+            foreach ($profiles
+                as
+                $profile)
+            {
+                if ($mods[$profile] != '') {
+                    $out .= '<a href="';
+                    $out .= esc_url($mods[$profile]);
+                    $out .= '"><span class="genericon genericon-' . $profile . '"></span></a>';
+                }
 
+            }
+            //close the wrap
+            $out .= '</div>';
+            //return social
+            return $out;
         }
-        //close the wrap
-        $out .= '</div>';
-        //return social
-        return $out;
     }
 
     /**
