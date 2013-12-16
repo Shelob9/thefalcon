@@ -47,9 +47,10 @@ if ( ! wp_is_mobile() ) : ?>
         <?php endif; ?>
 
         <?php if ( is_active_sidebar( 'sidebar-mobile' ) ) : ?>
-            <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+            <div id="mobile-sidebar" class="primary-sidebar widget-area" role="complementary">
                 <?php dynamic_sidebar( 'sidebar-mobile' ); ?>
             </div><!-- #primary-sidebar -->
         <?php endif; ?>
-    </div>
+    </div><!-- #secondary -->
+    </div><!-- #modal -->
 <?php endif; ?>
