@@ -132,4 +132,33 @@ include( 'inc/topbar.php' );
     }
 
 
+/**
+ * Sets the theme mods to either a default value or previously set value on theme activation
+ *
+ * @package yt1300
+ * @since 0.6
+ * @author Josh Pollock
+ */
+function yt1300_set_defaults() {
+    //Array of defaults
+    $defaults = array(
+        'twitter' 			=> '',
+        'googleplus' 		=> '',
+        'facebook' 			=> '',
+        'linkedin' 			=> '',
+        'gradient_start'	=> '#000',
+        'gradient_end'  	=> '#F5F5F5',
+    );
+    //parse array using set values if they exists, if not, use $defaults
+    $yt1300_defaults = wp_parse_args( get_theme_mods( 'yt1300', array() ), $defaults );
+    //set theme mods with parsed array
+    foreach ( $yt1300_defaults as $key=>$data) {
+        $name = $key;
+        $value = $data;
+        set_theme_mod( $name, $value );
+    }
+}
+add_action('after_switch_theme', 'yt1300_set_defaults');
+
+
 ?>
