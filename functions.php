@@ -122,15 +122,24 @@ include( 'inc/topbar.php' );
  */
  include_once('inc/mobile_sidebar.php');
 
-    function yt1300_header() {
-        if ( !wp_is_mobile() ) {
-            return \yt1300\topbar::header();
-        }
-        else {
-            return \yt1300\mobile_sidebar::header();
-        }
+/**
+ * Output correct header area (#masthead) based on device detection
+ *
+ * @uses topbar::header()
+ * @uses mobile_sidebar::header()
+ *
+ * @package yt1300
+ * @since 0.2
+ * @author Josh Pollock
+ */
+function yt1300_header() {
+    if ( !wp_is_mobile() ) {
+        return \yt1300\topbar::header();
     }
-
+    else {
+        return \yt1300\mobile_sidebar::header();
+    }
+}
 
 /**
  * Sets the theme mods to either a default value or previously set value on theme activation

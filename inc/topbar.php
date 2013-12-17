@@ -75,16 +75,12 @@ class topbar {
             $out = '<div id="top-social">';
             //before looping make sure $mods is vaild
             //loop for each social network
-            foreach ($profiles
-                as
-                $profile)
-            {
+            foreach ($profiles as $profile) {
                 if ($mods[$profile] != '') {
                     $out .= '<a href="';
                     $out .= esc_url($mods[$profile]);
                     $out .= '"><span class="genericon genericon-' . $profile . '"></span></a>';
                 }
-
             }
             //close the wrap
             $out .= '</div>';
