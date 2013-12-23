@@ -18,8 +18,8 @@
  function yt1300_customizer() {
      global $wp_customize;
      //add sections
-     $wp_customize->add_section( 'yt1300_gradient_bg', array(
-         'title'          => __('Gradient Background Colors', 'yt1300'),
+     $wp_customize->add_section( 'yt1300_colors', array(
+         'title'          => __('Color Options', 'yt1300'),
          'priority'       => 35,
      ) );
      //star
@@ -32,7 +32,7 @@
      ) );
      $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gradient_start', array(
          'label'   => __('Gradient Start Color', 'yt1300'),
-         'section' => 'yt1300_gradient_bg',
+         'section' => 'yt1300_colors',
          'settings'   => 'gradient_start',
      ) ) );
     //end color
@@ -42,7 +42,7 @@
 
      $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gradient_end', array(
          'label'   => __('Gradient End Color', 'yt1300'),
-         'section' => 'yt1300_gradient_bg',
+         'section' => 'yt1300_colors',
          'settings'   => 'gradient_end',
      ) ) );
      //Create Text fields for social with a loop
