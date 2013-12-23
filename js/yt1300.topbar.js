@@ -4,6 +4,9 @@ jQuery(document).ready(function($) {
     var nav = 'nav#primary-navigation';
     var headerMain = '.header-main';
 
+
+
+
     //function for changing sizes
     $(function(){
         $('#masthead').data('size','big');
@@ -49,7 +52,7 @@ jQuery(document).ready(function($) {
             }
         }
     });
-
+    //Function to fix margin
     var marginFix = function() { //fix the margins for #main content
         var adminbarHeight = $('#wpadminbar').height();
         var mastHeight = $('#masthead').height();
@@ -60,8 +63,11 @@ jQuery(document).ready(function($) {
             marginTop: mastHeight + 'px',
         });
     };
+    //do marginFix and again on window resize
     marginFix();
     $( window ).resize(function() {
         marginFix();
     });
+
+
 }); //end jQuery noConflict wrapper
