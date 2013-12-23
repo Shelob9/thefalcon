@@ -18,3 +18,5 @@ Copyright And License
 =====================
 The Falcon is copyright 2013 Josh Pollock
 The Falcon is licensed under the terms of the GNU General Public License Version 2 or later.
+Includes css from Sidr Copyright (c) 2013 Alberto Varela (http://www.albertovarelasanchez.com)
+Released under the MIT License http://opensource.org/licenses/MIT
