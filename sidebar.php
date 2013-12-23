@@ -29,8 +29,7 @@ if ( ! wp_is_mobile() ) : ?>
 	<?php endif; ?>
 </div><!-- #secondary -->
 <?php else : ?>
-    <div id="modal" style="display:none">
-        <a class="slidebar-close" href="javascript:jQuery.pageslide.close()"><span class="genericon genericon-close-alt"></span></a>
+    <div id="secondary-mobile" class="sidr">
         <?php echo \yt1300\topbar::social(); ?>
         <?php
             $description = get_bloginfo( 'description', 'display' );

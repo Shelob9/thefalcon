@@ -21,25 +21,12 @@ class mobile_sidebar {
      * @author Josh Pollock
      */
     function pageslide() {
-        wp_enqueue_script( 'pagelslide', get_stylesheet_directory_uri().'/js/jquery.pageslide.min.js', array('jquery'), null, true );
-        wp_enqueue_style( 'pageslide', get_stylesheet_directory_uri().'/css/jquery.pageslide.css');
-    }
-
-    /**
-     * The script to output to footer if is_mobile to make this.
-     *
-     * @package yt1300
-     * @since 0.2
-     * @author Josh Pollock
-     */
-    function make_it_so() {
-        echo '
-            <script>
-                jQuery(document).ready(function($) {
-                    $(".second").pageslide({ direction: "left", modal: true });
-                });
-            </script>';
-
+        //get the user choice for slideout-sidebar theme
+        //if !isset use dark
+        $theme = get_theme_mod( "sidr-theme", "dark" );
+        //add css and js
+        wp_enqueue_script( 'slideout-sidebar', get_stylesheet_directory_uri().'/js/yt1300.slideout.min.js', array('jquery'), null, true );
+        wp_enqueue_style( 'sidr', get_stylesheet_directory_uri().'/css/jquery.sidr.'$theme'.css');
     }
 
     /**
@@ -72,16 +59,15 @@ class mobile_sidebar {
         <header id="masthead" class="site-header" role="banner">
             <div class="header-main">
                 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                <?php
+                    $description = get_bloginfo( 'description', 'display' );
+                    if ( ! empty ( $description ) ) :
+                        ?>
+                        <h2 class="topbar-description"><?php echo esc_html( $description ); ?></h2>
+                    <?php endif; ?>
             </div>
-            <a href="#modal" class="second"><span class="genericon genericon-menu"></span></a>
-            <div class="search-toggle">
-                <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
-            </div>
-            <div id="search-container" class="search-box-wrapper hide">
-                <div class="search-box">
-                    <?php get_search_form(); ?>
-                </div>
-            </div>
+            <a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
+            <a id="menu-toggle"  class="second" title="<?php _e( 'Click To Show Sidebar', 'yt1300' ); ?>" href="#"><span class="genericon genericon-menu"></span></a>
         </header><!-- #masthead -->
     <?php
     }
