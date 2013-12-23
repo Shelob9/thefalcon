@@ -21,7 +21,7 @@ class mobile_sidebar {
     function slideout() {
         //get the user choice for slideout-sidebar theme
         //if !isset use dark
-        $theme = get_theme_mod( "sidr-theme", "dark" );
+        $theme = get_theme_mod( "sidr_theme", "dark" );
         //add css and js
         wp_enqueue_script( 'slideout-sidebar', get_stylesheet_directory_uri().'/js/yt1300.slideout.min.js', array('jquery'), null, true );
         wp_enqueue_style( 'sidr', get_stylesheet_directory_uri().'/css/jquery.sidr.'.$theme.'.css');

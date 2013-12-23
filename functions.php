@@ -19,32 +19,48 @@
      global $wp_customize;
      //add sections
      $wp_customize->add_section( 'yt1300_colors', array(
-         'title'          => __('Color Options', 'yt1300'),
-         'priority'       => 35,
+         'title'    => __('Color Options', 'yt1300'),
+         'priority' => 35,
      ) );
-     //star
+
      $wp_customize->add_section( 'yt1300_social', array(
-         'title'          => __('Social Links For Header', 'yt1300'),
-         'priority'       => 45,
+         'title'    => __('Social Links For Header', 'yt1300'),
+         'priority' => 45,
      ) );
+     //color settings
+     //gradient start color
      $wp_customize->add_setting( 'gradient_start', array(
-         'default'        => '#000',
+         'default' => '#000',
      ) );
      $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gradient_start', array(
          'label'   => __('Gradient Start Color', 'yt1300'),
          'section' => 'yt1300_colors',
-         'settings'   => 'gradient_start',
+         'settings'=> 'gradient_start',
      ) ) );
-    //end color
+    //gradient end color
      $wp_customize->add_setting( 'gradient_end', array(
-         'default'        => '#F5F5F5',
+         'default' => '#F5F5F5',
      ) );
-
      $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gradient_end', array(
          'label'   => __('Gradient End Color', 'yt1300'),
          'section' => 'yt1300_colors',
-         'settings'   => 'gradient_end',
+         'settings'=> 'gradient_end',
      ) ) );
+    //sidr theme
+     $wp_customize->add_setting( 'sidr_theme', array(
+         'default'       => 'dark',
+     ) );
+     $wp_customize->add_control( 'sidr_theme', array(
+         'label'   =>  __('Mobile Slide Out Sidebar Theme', 'yt1300'),
+         'section' => 'yt1300_colors',
+         'type'    => 'select',
+         'choices' => array(
+             'dark' => 'Dark',
+             'light'=> 'Ligt',
+         ),
+     ) );
+
+
      //Create Text fields for social with a loop
      $socials = array(
          array(
