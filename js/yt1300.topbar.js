@@ -1,5 +1,9 @@
-
 jQuery(document).ready(function($) {
+    //set element ID/classes in vars
+    social = '#top-social';
+    nav = 'nav#primary-navigation';
+    headerMain = '.header-main';
+
     //function for changing sizes
     $(function(){
         $('#masthead').data('size','big');
@@ -11,32 +15,32 @@ jQuery(document).ready(function($) {
         //when scrolled away from top
         if ($('body').scrollTop() > 0) {
             if ($nav.data('size') == 'big') {
-                $('#top-social').css('display', 'none');
-                $('nav#primary-navigation').css({
+                $( social ).css('display', 'none');
+                $( nav ).css({
                     display: 'inline',
                     top: '0px',
                 });
-                $('.header-main').fadeOut("fast");
-                $('nav#primary-navigation').animate({
+                $( headerMain ).fadeOut("fast");
+                $( nav ).animate({
                     paddingLeft: $( 'h1.site-title' ).width() + 45 + 'px',
                 }), {queue:false, duration:600};
-                $('nav#primary-navigation').css('top', '0px');
+                $( nav ).css('top', '0px');
                 $nav.data('size','small').stop().animate({
                     height:'48px'
                 }, 600);
-                $('.header-main').animate({
+                $( headerMain ).animate({
                     left:200, opacity:"show"}, 600);
             };
         }
         //when scrolled back
         else {
             if ($nav.data('size') == 'small') {
-                $('#top-social').css('display', 'inline');
-                $('nav#primary-navigation').animate({
+                $( social ).css('display', 'inline');
+                $( nav ).animate({
                     display: 'block',
                     top: '40px',
                 }), {queue:false, duration:600}; ;
-                $('nav#primary-navigation').animate({
+                $( nav ).animate({
                     paddingLeft: '30px',
                 }), {queue:false, duration:600};
                 $nav.data('size','big').stop().animate({
