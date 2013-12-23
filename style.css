@@ -5,7 +5,7 @@
  Author:         Josh Pollock
  Author URI:     http://JoshPress.net
  Template:       twentyfourteen
- Version:        0.6
+ Version:        1.0.0
  License:       GPL (Version 2 or later)
  License URI:   http://www.gnu.org/licenses/gpl-2.0.html
  Tags:          black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -22,34 +22,100 @@ Includes jQuery Pageslide copyright 2012 Robbin & Co. Distributed under the MIT 
 
 @import url("../twentyfourteen/style.css");
 
+/* Theme customization starts here */
+
+/* center the design */
 .site {
     margin: 0 auto;
 }
 
+/* add padding to the top of the sidebar */
 #secondary {
     padding-top: 8px;
 }
 
+/* prevent links changing color on hover */
 #secondary a:hover {
     color: #fff;
 }
 
+/* change the background color for form inputs */
 .footer-sidebar .widget input, .footer-sidebar .widget textarea, .primary-sidebar .widget input, .primary-sidebar .widget textarea {
     background-color: #000;
 }
-
-/**For mobile slide-out sidebar open and close icons.**/
-.slidebar-close {
-    position: fixed;
-    right: 20px;
-    top: 16px;
-}
-
-.second {
+/* Keep mobile toggle on the right and resize the genricon */
+#menu-toggle {
     float: right;
     display: inline;
 }
-.second .genericon {
+
+#menu-toggle .genericon {
     font-size: 48px;
     padding: 0 1em 0 0;
+    z-index: 999;
+}
+
+/* enhancing the topbar */
+#big-top {
+    display: block; }
+
+#masthead {
+    width: 100%;
+    max-width: 100%;
+    height: 88px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.header-main {
+    display: inline;
+}
+
+nav#primary-navigation {
+    width: 100%;
+    display: block;
+    top: 40px;
+    left: 0px;
+    position: absolute;
+    padding-left: 30px;
+}
+
+.topbar-description {
+    color: #fff;
+    display: inline;
+    font-weight: bold;
+    font-size: 100%;
+    text-transform: lowercase;
+    line-height: 50px;
+    vertical-align: baseline;
+    margin-left: 20px;
+    font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+    .search-toggle {
+        position: absolute;
+        top: -8px;
+        right: 0px;
+    }
+    #masthead {
+        height: 80px;
+    }
+    .topbar-menu {
+        display: block;
+        background-color: black;
+    }
+    .primary-navigation.toggled-on {
+        display: block;
+        padding: 48px 0 0 0px;
+        background-color: black;
+    }
+    .nav-toggled {
+        padding-top: 48px !important;
+        padding-left: 0px !important;
+    }
+    h2.topbar-description {
+        display:none;
+    }
 }
