@@ -68,6 +68,12 @@ Includes jQuery Pageslide copyright 2012 Robbin & Co. Distributed under the MIT 
     left: 0;
 }
 
+.search-toggle {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
 .header-main {
     display: inline;
 }
@@ -94,11 +100,6 @@ nav#primary-navigation {
 }
 
 @media screen and (max-width: 768px) {
-    .search-toggle {
-        position: absolute;
-        top: -8px;
-        right: 0px;
-    }
     #masthead {
         height: 80px;
     }
@@ -118,4 +119,20 @@ nav#primary-navigation {
     h2.topbar-description {
         display:none;
     }
+}
+
+#secondary-mobile #top-social {
+    display: inline;
+    padding-right: 1em;
+}
+#secondary-mobile #top-social .genericon {
+    float: left;
+    font-size: 1.5em;
+    color: #24890d;
+}
+#secondary-mobile #top-social .genericon:first-child {
+    margin-left: 1em;
+}
+#secondary-mobile #top-social .genericon:hover {
+    color: white;
 }

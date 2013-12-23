@@ -102,9 +102,6 @@ class topbar {
                 nav#primary-navigation {
                 background: transparent; } }
                 @media screen and (max-width: 768px) {
-                .search-toggle {
-                position: absolute;
-                top: 0px; }
                 #masthead {
                 margin-top:46px;
                 }
@@ -124,3 +121,4 @@ class topbar {
 }
 
 new topbar();
+
