@@ -49,13 +49,19 @@ jQuery(document).ready(function($) {
             }
         }
     });
-    //fix the margins for #main content
-    var adminbarHeight = $( '#wpadminbar' ).height();
-    var mastHeight = $( '#masthead' ).height();
-    $( '#masthead').css({
-        marginTop:  adminbarHeight + 'px',
-    });
-    $( '#main').css({
-        marginTop: mastHeight + 'px',
+
+    var marginFix = function() { //fix the margins for #main content
+        var adminbarHeight = $('#wpadminbar').height();
+        var mastHeight = $('#masthead').height();
+        $('#masthead').css({
+            marginTop: adminbarHeight + 'px',
+        });
+        $('#main').css({
+            marginTop: mastHeight + 'px',
+        });
+    };
+    marginFix();
+    $( window ).resize(function() {
+        marginFix();
     });
 }); //end jQuery noConflict wrapper
