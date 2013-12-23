@@ -6,12 +6,8 @@ namespace yt1300;
 class mobile_sidebar {
 
     function __construct() {
-        add_action( 'wp_enqueue_scripts', array($this, 'pageslide' ) );
-        add_action( 'wp_footer', array($this, 'make_it_so') );
+        add_action( 'wp_enqueue_scripts', array($this, 'slideout' ) );
         add_action( 'widgets_init', array($this, 'mobile_widget_area'));
-        if ( wp_is_mobile() ) {
-            add_action( 'wp_head', array( $this, 'small_fix') );
-        }
     }
     /**
      * Enqueue sidr CSS/JS
@@ -20,13 +16,13 @@ class mobile_sidebar {
      * @since 0.2
      * @author Josh Pollock
      */
-    function pageslide() {
+    function slideout() {
         //get the user choice for slideout-sidebar theme
         //if !isset use dark
         $theme = get_theme_mod( "sidr-theme", "dark" );
         //add css and js
         wp_enqueue_script( 'slideout-sidebar', get_stylesheet_directory_uri().'/js/yt1300.slideout.min.js', array('jquery'), null, true );
-        wp_enqueue_style( 'sidr', get_stylesheet_directory_uri().'/css/jquery.sidr.'$theme'.css');
+        wp_enqueue_style( 'sidr', get_stylesheet_directory_uri().'/css/jquery.sidr.'.$theme.'.css');
     }
 
     /**
@@ -70,21 +66,6 @@ class mobile_sidebar {
             <a id="menu-toggle"  class="second" title="<?php _e( 'Click To Show Sidebar', 'yt1300' ); ?>" href="#"><span class="genericon genericon-menu"></span></a>
         </header><!-- #masthead -->
     <?php
-    }
-
-    /**
-     * Mobile css fixes
-     *
-     * @package yt1300
-     * @since 0.3
-     * @author Josh Pollock
-     */
-    function small_fix() {
-        echo '
-        <style>
-                #top-social .genericon{float:left;}
-        </style>
-    ';
     }
 }
 
