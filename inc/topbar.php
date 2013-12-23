@@ -101,7 +101,8 @@ class topbar {
                 .topbar-menu, .search-toggle {
                 display: inline-block; }
                 nav#primary-navigation {
-                background: transparent; } }
+                background: transparent; }
+                }
                 @media screen and (max-width: 768px) {
                 .topbar-menu {
                 display: block;
@@ -111,7 +112,14 @@ class topbar {
                 padding: 48px 0 0 0px; }
                 .nav-toggled {
                 padding-top: 48px !important;
-                padding-left: 0px !important; } }
+                padding-left: 0px !important; }
+                .search-toggle {
+                display:none;}
+                #top-social{
+                width: inherit;
+                margin-left: 10px;}
+                }
+
         </style>
     ';
     }
