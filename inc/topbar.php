@@ -5,8 +5,8 @@
 class topbar {
 
     function __construct() {
-        add_action( 'wp_enqueue_scripts', array( $this, 'script_style') );
         if ( !wp_is_mobile() ) {
+            add_action( 'wp_enqueue_scripts', array( $this, 'script_style') );
             add_action( 'wp_head', array( $this, 'small_fix') );
         }
     }

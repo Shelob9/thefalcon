@@ -6,7 +6,9 @@ namespace yt1300;
 class mobile_sidebar {
 
     function __construct() {
-        add_action( 'wp_enqueue_scripts', array($this, 'slideout' ) );
+        if ( wp_is_mobile() ) {
+            add_action( 'wp_enqueue_scripts', array( $this, 'slideout' ) );
+        }
         add_action( 'widgets_init', array($this, 'mobile_widget_area'));
     }
     /**
