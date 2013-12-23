@@ -1,8 +1,8 @@
 jQuery(document).ready(function($) {
     //set element ID/classes in vars
-    social = '#top-social';
-    nav = 'nav#primary-navigation';
-    headerMain = '.header-main';
+    var social = '#top-social';
+    var nav = 'nav#primary-navigation';
+    var headerMain = '.header-main';
 
     //function for changing sizes
     $(function(){
