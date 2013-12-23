@@ -103,6 +103,12 @@ nav#primary-navigation {
     #masthead {
         height: 80px;
     }
+    #top-social {
+        float:left;
+    }
+    .search-toggle {
+        top: -8px;
+    }
     .topbar-menu {
         display: block;
         background-color: black;
