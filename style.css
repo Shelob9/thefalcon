@@ -106,9 +106,6 @@ nav#primary-navigation {
     #top-social {
         float:left;
     }
-    .search-toggle {
-        top: -8px;
-    }
     .topbar-menu {
         display: block;
         background-color: black;
