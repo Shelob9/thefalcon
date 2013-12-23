@@ -54,8 +54,8 @@ jQuery(document).ready(function($) {
     var mastHeight = $( '#masthead' ).height();
     $( '#masthead').css({
         marginTop:  adminbarHeight + 'px',
-    })
+    });
     $( '#main').css({
         marginTop: mastHeight + 'px',
-    })
+    });
 }); //end jQuery noConflict wrapper

@@ -103,9 +103,6 @@ class topbar {
                 nav#primary-navigation {
                 background: transparent; } }
                 @media screen and (max-width: 768px) {
-                #masthead {
-                margin-top:46px;
-                }
                 .topbar-menu {
                 display: block;
                 background-color: black; }
