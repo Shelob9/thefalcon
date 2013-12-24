@@ -3,8 +3,15 @@ jQuery(document).ready(function($) {
     var social = '#top-social';
     var nav = 'nav#primary-navigation';
     var headerMain = '.header-main';
-
-
+    //margin fix for masthead function
+    var mastFix = function() {
+        $('#masthead').css({
+            marginTop: $('#wpadminbar').height() + 'px'
+        });
+    };
+    mastFix();
+    //ensure that #wpadminbar doesn't move
+    $('#wpadminbar').css( 'position', 'fixed' );
 
 
     //function for changing sizes
@@ -12,12 +19,14 @@ jQuery(document).ready(function($) {
         $('#masthead').data('size','big');
     });
 
+    //the main scroll function
     $(window).scroll(function(){
         //set container of the nav element
         var $nav = $('#masthead');
         //when scrolled away from top
         if ($('body').scrollTop() > 0) {
             if ($nav.data('size') == 'big') {
+                mastFix();
                 $( social ).css('display', 'none');
                 $( nav ).css({
                     display: 'inline',
@@ -38,6 +47,7 @@ jQuery(document).ready(function($) {
         //when scrolled back
         else {
             if ($nav.data('size') == 'small') {
+                mastFix();
                 $( social ).css('display', 'inline');
                 $( nav ).animate({
                     display: 'block',
@@ -52,21 +62,17 @@ jQuery(document).ready(function($) {
             }
         }
     });
-    //Function to fix margin
-    var marginFix = function() { //fix the margins for #main content
-        var adminbarHeight = $('#wpadminbar').height();
-        var mastHeight = $('#masthead').height();
-        $('#masthead').css({
-            marginTop: adminbarHeight + 'px',
-        });
+    //Function to fixing margin for #main
+    var marginFix = function() {
         $('#main').css({
-            marginTop: mastHeight + 'px',
+            marginTop: $('#masthead').height() + 'px',
         });
     };
-    //do marginFix and again on window resize
+    //do marginFix and again on window resize along with mastFix
     marginFix();
     $( window ).resize(function() {
         marginFix();
+        mastFix();
     });
 
 
