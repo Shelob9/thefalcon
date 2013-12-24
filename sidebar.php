@@ -30,13 +30,15 @@ if ( ! wp_is_mobile() ) : ?>
 </div><!-- #secondary -->
 <?php else : ?>
     <div id="secondary-mobile" class="sidr">
-        <?php echo \yt1300\topbar::social(); ?>
-        <div class="search-toggle">
-            <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
-        </div>
-        <div id="search-container" class="search-box-wrapper hide">
-            <div class="search-box">
-                <?php get_search_form(); ?>
+        <div id="mobile-sidebar-top">
+            <?php echo \yt1300\topbar::social(); ?>
+            <div class="search-toggle">
+                <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
+            </div>
+            <div id="search-container" class="search-box-wrapper hide">
+                <div class="search-box">
+                    <?php get_search_form(); ?>
+                </div>
             </div>
         </div>
         <?php
