@@ -51,7 +51,7 @@
          'type'    => 'select',
          'choices' => array(
              'dark' => 'Dark',
-             'light'=> 'Ligt',
+             'light'=> 'Light',
          ),
      ) );
 
