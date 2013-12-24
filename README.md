@@ -3,6 +3,8 @@ The Falcon
 
 A child theme for Twenty Fourteen with all content centered, user-configurable gradient background, fancier topbar and a slideout sidebar on mobile.
 
+Theme features options, via the theme customizer, for slide-out sidebar theme and gradient background colors.
+
 More Information
 ================
 * Theme: http://jpwp.me/thefalcon
