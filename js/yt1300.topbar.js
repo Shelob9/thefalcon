@@ -1,11 +1,13 @@
 jQuery(document).ready(function($) {
     //set element ID/classes in vars
-    var social = '#top-social';
-    var nav = 'nav#primary-navigation';
-    var headerMain = '.header-main';
+    var social      = '#top-social';
+    var nav         = 'nav#primary-navigation';
+    var headerMain  = '.header-main';
+    var header      = '#masthead';
+    var main        = '#main';
     //margin fix for masthead function
     var mastFix = function() {
-        $('#masthead').css({
+        $( header ).css({
             marginTop: $('#wpadminbar').height() + 'px'
         });
     };
@@ -16,15 +18,15 @@ jQuery(document).ready(function($) {
 
     //function for changing sizes
     $(function(){
-        $('#masthead').data('size','big');
+        $( header ).data('size','big');
     });
 
     //the main scroll function
     $(window).scroll(function(){
         //set container of the nav element
-        var $nav = $('#masthead');
+        var $nav = $( header );
         //when scrolled away from top
-        if ($('body').scrollTop() > 0) {
+        if ( $('body').scrollTop() || $('html').scrollTop() > 0) {
             if ($nav.data('size') == 'big') {
                 mastFix();
                 $( social ).css('display', 'none');
@@ -64,8 +66,8 @@ jQuery(document).ready(function($) {
     });
     //Function to fixing margin for #main
     var marginFix = function() {
-        $('#main').css({
-            marginTop: $('#masthead').height() + 'px',
+        $( main ).css({
+            marginTop: $( header ).height() + 'px',
         });
     };
     //do marginFix and again on window resize along with mastFix
