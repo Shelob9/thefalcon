@@ -66,7 +66,7 @@ class topbar {
     */
     static function social() {
         //get all theme mods at once in $mods
-        $mods = get_theme_mods('yt1300');
+        $mods = get_theme_mods();
         //check that mods are set, if not, abandon ship.
         if ( $mods != false ) {
             //create array to loop through when we create our output
@@ -74,9 +74,13 @@ class topbar {
             //build output
             //start by wrapping in #top-social
             $out = '<div id="top-social">';
-            //before looping make sure $mods is vaild
+            //
+            $overP = apply_filters( '_sf2_social_profiles', $profiles );
+            if ( is_array( $overP ) ) {
+                $profiles = $overP;
+            }
             //loop for each social network
-            foreach ($profiles as $profile) {
+            foreach ( $profiles as $profile) {
                 if ($mods[$profile] != '') {
                     $out .= '<a href="';
                     $out .= esc_url($mods[$profile]);
