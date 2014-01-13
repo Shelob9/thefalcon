@@ -180,5 +180,27 @@ function yt1300_set_defaults() {
 }
 add_action('after_switch_theme', 'yt1300_set_defaults');
 
+/**
+ * Remove support for custom header
+ *
+ * @package yt1300
+ * @since 1.0.1
+ * @author Josh Pollock
+ */
+ function yt1300_no_header() {
+     remove_theme_support( 'custom-header');
+ }
+add_action( 'after_theme_setup', 'yt1300_no_header' );
+
+/**
+ * Override the plugable functions in twentyfourteen/inc/custom-header.php with nothing
+ *
+ * @package yt1300
+ * @since 1.0.1
+ * @author Josh Pollock
+ */
+function twentyfourteen_admin_header_image() {}
+function twentyfourteen_header_style() {}
+
 
 ?>
