@@ -145,10 +145,12 @@ include( 'inc/topbar.php' );
  */
 function yt1300_header() {
     if ( !wp_is_mobile() ) {
-        return \yt1300\topbar::header();
+        yt1300_topbar::header();
+        //return \yt1300\topbar::header();
     }
     else {
-        return \yt1300\mobile_sidebar::header();
+        return yt1300_mobile_sidebar::header();
+        //return \yt1300\mobile_sidebar::header();
     }
 }
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace yt1300;
+//namespace yt1300;
 
 
-class mobile_sidebar {
+class yt1300_mobile_sidebar {
 
     function __construct() {
         if ( wp_is_mobile() ) {
@@ -105,4 +105,4 @@ class mobile_sidebar {
     }
 }
 
-new mobile_sidebar();
+new yt1300_mobile_sidebar();

@@ -1,8 +1,8 @@
 <?php
 
-    namespace yt1300;
+    //namespace yt1300;
 
-class topbar {
+class yt1300_topbar {
 
     function __construct() {
         if ( !wp_is_mobile() ) {
@@ -130,5 +130,5 @@ class topbar {
 
 }
 
-new topbar();
+new yt1300_topbar();
 
