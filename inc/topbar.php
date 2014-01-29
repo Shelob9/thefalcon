@@ -8,6 +8,7 @@ class yt1300_topbar {
         if ( !wp_is_mobile() ) {
             add_action( 'wp_enqueue_scripts', array( $this, 'script_style') );
             add_action( 'wp_head', array( $this, 'small_fix') );
+            add_filter( 'twentyfourteen_custom_header_args', array( $this, 'custom_header_cb' ) );
         }
     }
 
@@ -148,6 +149,72 @@ class yt1300_topbar {
                 </a>
             </div>
         <?php
+    }
+
+    /**
+     * Custom header args filter callback
+     */
+    function custom_header_cb() {
+        $args = array(
+            'default-text-color'     => 'fff',
+            'width'                  => 300,
+            'height'                 => 40,
+            'flex-height'            => false,
+            'wp-head-callback'       => array( $this, 'header_style' ),
+            'admin-head-callback'    => array( $this, 'admin_header_style' ),
+            'admin-preview-callback' => array( $this, 'admin_header_image' ),
+        );
+        return $args;
+    }
+
+    function header_style() {
+
+    }
+
+    function admin_header_style() {
+        ?>
+        <style type="text/css" id="twentyfourteen-admin-header-css">
+            .appearance_page_custom-header #headimg {
+                background-color: #000;
+                border: none;
+                max-width: 1260px;
+                height: 88px;
+            }
+            #headimg h1 {
+                font-family: Lato, sans-serif;
+                font-size: 18px;
+            }
+            #headimg h1 a {
+                color: #fff;
+                text-decoration: none;
+            }
+            #logo, #title {
+                display: inline-block;
+            }
+            #logo img {
+                margin: 40px 8px 0;
+                height: 40px;
+            }
+            #title {
+                margin: 0 0 0 30px;
+            }
+        </style>
+    <?php
+
+    }
+
+    function admin_header_image() { ?>
+        <div id="headimg">
+            <div id="title">
+                <h1 class="displaying-header-text"><a id="name"<?php echo sprintf( ' style="color:#%s;"', get_header_textcolor() ); ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+            </div>
+            <?php if ( get_header_image() ) : ?>
+                <div id="logo">
+                    <img src="<?php header_image(); ?>" alt="">
+                </div>
+            <?php endif; ?>
+        </div>
+    <?php
     }
 
 }
