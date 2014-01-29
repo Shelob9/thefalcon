@@ -145,7 +145,7 @@ class yt1300_topbar {
          ?>
             <div id="logo">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                    <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+                    <img src="<?php header_image(); ?>" alt="Site Logo">
                 </a>
             </div>
         <?php
@@ -153,6 +153,10 @@ class yt1300_topbar {
 
     /**
      * Custom header args filter callback
+     *
+     * @package yt1300
+     * @since 1.1.0
+     * @author Josh Pollock
      */
     function custom_header_cb() {
         $args = array(
@@ -167,10 +171,26 @@ class yt1300_topbar {
         return $args;
     }
 
+    /**
+     * Header style cb
+     *
+     * @todo Do we need this?
+     *
+     * @package yt1300
+     * @since 1.1.0
+     * @author Josh Pollock
+     */
     function header_style() {
 
     }
 
+    /**
+     * Admin header style cb
+     *
+     * @package yt1300
+     * @since 1.1.0
+     * @author Josh Pollock
+     */
     function admin_header_style() {
         ?>
         <style type="text/css" id="twentyfourteen-admin-header-css">
@@ -198,11 +218,23 @@ class yt1300_topbar {
             #title {
                 margin: 0 0 0 30px;
             }
+            .warn {
+                background-color:red;
+                color: white;
+                padding: 6px;
+            }
         </style>
     <?php
 
     }
 
+    /**
+     * Admin header preview
+     *
+     * @package yt1300
+     * @since 1.1.0
+     * @author Josh Pollock
+     */
     function admin_header_image() { ?>
         <div id="headimg">
             <div id="title">
@@ -214,6 +246,9 @@ class yt1300_topbar {
                 </div>
             <?php endif; ?>
         </div>
+       <div class="warn">
+           <Strong>Note:</Strong> The header image is used as logo and the height of 40px is enforced via an !important CSS declaration. Use a header image of a diffrent height at your own risk.
+       </div>
     <?php
     }
 
