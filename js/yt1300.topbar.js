@@ -47,7 +47,6 @@ jQuery(document).ready(function($) {
                     left:200, opacity:"show"}, 600);
                 };
                 $( logo ).css( 'display', 'none' );
-
         }
         //when scrolled back
         else {

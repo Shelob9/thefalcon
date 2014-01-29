@@ -8,10 +8,16 @@ More Information
 * Theme: http://jpwp.me/thefalcon
 * Author: http://JoshPress.net
 
-Planned Features
-================
-* Better screenshot.
-* Improved background options including solid color and gradient backgrounds for sidebar, header and footer.
+
+Changelog
+=========
+1.1.0
+* Add custom header functionality as logo.
+* No namespacing classes, since php 5.2 is still a thing:(
+1.0.1
+* Change scrollTop() conditon
+* No header img
+* Filter for social profiles.
 
 
 Copyright And License
