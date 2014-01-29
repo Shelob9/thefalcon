@@ -35,6 +35,11 @@ class yt1300_topbar {
             <div id="big-top">
                 <div class="header-main">
                     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    <?php
+                        if ( get_header_image() ) {
+                            self::logo();
+                        }
+                    ?>
                 </div>
                    <?php echo self::social(); ?>
             </div>
@@ -126,6 +131,23 @@ class yt1300_topbar {
 
         </style>
     ';
+    }
+
+    /**
+     * Puts logo in topbar
+     *
+     * @package yt1300
+     * @since 1.1.0
+     * @author Josh Pollock
+     */
+    function logo() {
+         ?>
+            <div id="logo">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                    <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+                </a>
+            </div>
+        <?php
     }
 
 }
