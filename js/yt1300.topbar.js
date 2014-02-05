@@ -5,6 +5,7 @@ jQuery(document).ready(function($) {
     var headerMain  = '.header-main';
     var header      = '#masthead';
     var main        = '#main';
+    var logo        = '#logo';
     //margin fix for masthead function
     var mastFix = function() {
         $( header ).css({
@@ -44,7 +45,8 @@ jQuery(document).ready(function($) {
                 }, 600);
                 $( headerMain ).animate({
                     left:200, opacity:"show"}, 600);
-            };
+                };
+                $( logo ).css( 'display', 'none' );
         }
         //when scrolled back
         else {
@@ -61,6 +63,7 @@ jQuery(document).ready(function($) {
                 $nav.data('size','big').stop().animate({
                     height:'88px'
                 }, 600);
+                $( logo ).css( 'display', 'inline' );
             }
         }
     });
