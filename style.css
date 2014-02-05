@@ -149,3 +149,11 @@ nav#primary-navigation {
     font-family: lato;
     margin-right: 0;
 }
+
+.hide {
+    display: none;
+}
+
+.unhide {
+    display: inline;
+}

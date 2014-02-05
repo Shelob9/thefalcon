@@ -8,7 +8,7 @@
  */
 
 if ( ! wp_is_mobile() ) : ?>
-<div id="secondary">
+<div id="secondary"">
 	<?php
 		$description = get_bloginfo( 'description', 'display' );
 		if ( ! empty ( $description ) ) :
@@ -29,9 +29,9 @@ if ( ! wp_is_mobile() ) : ?>
 	<?php endif; ?>
 </div><!-- #secondary -->
 <?php else : ?>
-    <div id="secondary-mobile" class="sidr">
+    <div id="secondary-mobile" class="sidr hide">
         <div id="mobile-sidebar-top">
-            <?php echo \yt1300\topbar::social(); ?>
+            <?php echo yt1300_topbar::social(); ?>
             <div class="search-toggle">
                 <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
             </div>
